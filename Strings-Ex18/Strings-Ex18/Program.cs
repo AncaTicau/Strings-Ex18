@@ -6,21 +6,21 @@ namespace Strings_Ex18
     {
         static void Main(string[] args)
         {
-            string givenString = "ana are mere";
-            StartsWith(givenString);
+            //Write a method that to remove the characters which have odd index values of a given string.
+            string message = RemoveOddsCharacters("Ana are mere si Dana are pere.");
+            Console.WriteLine(message);
         }
-
-        //Write a method to check whether a string starts with specified characters
-        public static void StartsWith(string input)
+        public static string RemoveOddsCharacters(string input)
         {
-            char[] specifiedCharacters = { 'a', 'b', 'c' };
-            for (int i = 0; i < specifiedCharacters.Length; i++)
+            string result = null;
+
+            for (int i = 0; i < input.Length; i = i + 2)
             {
-                if (input[0] == specifiedCharacters[i])
-                {
-                    Console.WriteLine("Yes, this string stars with a,b or c");
-                }
+                result += input[i].ToString();
             }
+
+            return result;
         }
     }
 }
+
